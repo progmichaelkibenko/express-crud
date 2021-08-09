@@ -3,5 +3,5 @@ const {
 } = require('../common/Response');
 
 module.exports = () => {
-    return new Response({ status: true, content: 'Yo, the coolest delete ever' })
+    return 'Yo, the coolest delete ever'
 }
