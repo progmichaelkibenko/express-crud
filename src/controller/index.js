@@ -6,7 +6,7 @@ const {
 const generateControllers = require('./generator');
 
 module.exports = {
-    addcrudRoutes: ({
+    getCrudControllers: ({
         entityName,
         more,
         service
@@ -17,11 +17,11 @@ module.exports = {
             service
         })
 
-        entityRouter.use(entityName, addBasic({
+        entityRouter.use(`/${entityName}`, addBasic({
             more,
             controller
         }))
 
-        return basicRouter;
+        return entityRouter;
     }
 }
