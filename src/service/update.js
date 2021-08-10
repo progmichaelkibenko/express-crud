@@ -1,7 +1,9 @@
-const {
-    Response
-} = require('../common/Response');
-
-module.exports = () => {
-    return 'Yo, the update get ever'
+module.exports = ({
+    repository,
+}) => {
+    return ({
+        data
+    }) => repository.update({
+        data
+    })
 }

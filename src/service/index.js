@@ -4,10 +4,23 @@ const deleteService = require('./delete');
 const get = require('./get');
 const getById = require('./getById');
 
-module.exports = {
-    add,
-    update,
-    delete: deleteService,
-    get,
-    getById
-}
+
+module.exports = ({
+    repository
+}) => ({
+    add: add({
+        repository
+    }),
+    update: update({
+        repository
+    }),
+    delete: deleteService({
+        repository
+    }),
+    get: get({
+        repository
+    }),
+    getById: getById({
+        repository
+    })
+})

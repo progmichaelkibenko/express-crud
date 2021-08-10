@@ -2,12 +2,12 @@ const {
     Response
 } = require('../common/Response');
 
-module.exports = (service) => (req, res, next) => {
+module.exports = (service) => async (req, res, next) => {
     try {
         const {
             query = {}
         } = req;
-        const serviceResponse = service.get(query)
+        const serviceResponse = await service.get(query)
         res.json(new Response({
             status: true,
             content: serviceResponse

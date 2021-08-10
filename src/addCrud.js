@@ -2,12 +2,16 @@ const {
     getCrudControllers
 } = require('./controller');
 
-const genericService = require('./service');
+const defaultServiceGenerator = require('./service');
+const defaultRepository = require('./repository');
 
 module.exports = ({
     entityName,
     moreRoutes,
-    service = genericService
+    repository = defaultRepository,
+    service = defaultServiceGenerator({
+        repository
+    }),
 }) => {
     return getCrudControllers({
         entityName,

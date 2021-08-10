@@ -9,10 +9,17 @@ const {
 } = require('./index');
 
 app.use(crud({
-    entityName: 'test'
+    entityName: 'test',
+}))
+
+app.use(crud({
+    entityName: 'paka'
+}))
+
+app.use(crud({
+    entityName: 'puki'
 }))
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
-
 });
