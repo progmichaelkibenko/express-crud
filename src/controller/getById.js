@@ -6,9 +6,12 @@ module.exports = (service) => async (req, res, next) => {
     try {
         const {
             query = {},
-            params = {}
+                params = {}
         } = req;
-        const serviceResponse = await service.getById(params, query)
+        const serviceResponse = await service.getById({
+            data: params,
+            query
+        })
         res.json(new Response({
             status: true,
             content: serviceResponse

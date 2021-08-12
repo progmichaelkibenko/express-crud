@@ -2,8 +2,10 @@ module.exports = ({
     repository,
 }) => {
     return ({
-        data
+        data,
+        query
     }) => repository.update({
-        data
+        data,
+        query
     })
 }

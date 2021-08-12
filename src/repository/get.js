@@ -1,3 +1,14 @@
-module.exports = async () => {
-    return "got succesfully"
+module.exports = ({
+    Model
+}) => {
+    return ({
+        data
+    }) => {
+        return Model.find({
+            ...data,
+            deletedAt: {
+                $exists: false
+            }
+        }).lean()
+    }
 }

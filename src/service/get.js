@@ -2,8 +2,8 @@ module.exports = ({
     repository,
 }) => {
     return ({
-        data
+        data,
     }) => repository.get({
-        data
+        data,
     })
 }

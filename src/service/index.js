@@ -4,7 +4,6 @@ const deleteService = require('./delete');
 const get = require('./get');
 const getById = require('./getById');
 
-
 module.exports = ({
     repository
 }) => ({

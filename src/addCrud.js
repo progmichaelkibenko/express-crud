@@ -8,7 +8,13 @@ const defaultRepository = require('./repository');
 module.exports = ({
     entityName,
     moreRoutes,
-    repository = defaultRepository,
+    mongo: {
+        schema
+    },
+    repository = defaultRepository({
+        entityName,
+        schema
+    }),
     service = defaultServiceGenerator({
         repository
     }),

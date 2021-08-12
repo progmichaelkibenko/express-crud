@@ -5,9 +5,11 @@ const {
 module.exports = (service) => async (req, res, next) => {
     try {
         const {
-            query = {}
+            query = {},
         } = req;
-        const serviceResponse = await service.get(query)
+        const serviceResponse = await service.get({
+            data: query
+        })
         res.json(new Response({
             status: true,
             content: serviceResponse

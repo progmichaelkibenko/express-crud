@@ -5,9 +5,15 @@ const {
 module.exports = (service) => async (req, res, next) => {
     try {
         const {
-            body = {}
+            body = {},
+                query = {},
+                params = {}
         } = req;
-        const serviceResponse = await service.add(body)
+        const serviceResponse = await service.add({
+            data: body,
+            query,
+            params
+        })
         res.json(new Response({
             status: true,
             content: serviceResponse

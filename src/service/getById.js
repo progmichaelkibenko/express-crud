@@ -2,7 +2,8 @@ module.exports = ({
     repository,
 }) => {
     return ({
-        data
+        data,
+        query
     }) => repository.getById({
         data
     })
