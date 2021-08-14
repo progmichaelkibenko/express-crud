@@ -11,12 +11,14 @@ module.exports = ({
     mongo: {
         schema
     },
+    hooks,
     repository = defaultRepository({
         entityName,
         schema
     }),
     service = defaultServiceGenerator({
-        repository
+        repository,
+        hooks
     }),
 }) => {
     return getCrudControllers({
