@@ -1,11 +1,15 @@
 const ErrorHandler = require('./ErrorHandler');
 const {
     Response,
-    ResponseError
+    ResponseError,
+    
 } = require('./Response');
+
+const validationFailed = require('./validationFailed');
 
 module.exports = {
     ErrorHandler,
     Response,
-    ResponseError
+    ResponseError,
+    validationFailed
 }

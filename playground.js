@@ -45,6 +45,23 @@ app.use(crud({
     entityName: 'paka',
     mongo: {
         schema: pakaSchema
+    },
+    validations: {
+        delete: async ({
+            data
+        }) => {
+            const {
+                name
+            } = data;
+            const returnable = [];
+            if (name === 'paka') {
+                returnable.push({
+                    field: 'name',
+                    msg: 'name cant be paka'
+                })
+            }
+            return returnable;
+        }
     }
 }))
 

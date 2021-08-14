@@ -1,6 +1,7 @@
 const {
-    Response
-} = require('../common/Response');
+    Response,
+    validationFailed
+} = require('../common');
 
 module.exports = (service) => async (req, res, next) => {
     try {
@@ -12,7 +13,8 @@ module.exports = (service) => async (req, res, next) => {
         const serviceResponse = await service.add({
             data: body,
             query,
-            params
+            params,
+            validationFailed: validationFailed(req, res, next)
         })
         res.json(new Response({
             status: true,

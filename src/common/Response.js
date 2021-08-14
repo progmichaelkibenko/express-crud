@@ -17,11 +17,13 @@ module.exports.ResponseError = class ResponseError {
         reason,
         url,
         ip,
+        validationErrors
     }) {
         this.status = status;
         this.msg = msg;
         this.reason = reason;
         this.url = url;
         this.ip = ip;
+        this.validationErrors = validationErrors;
     }
 }

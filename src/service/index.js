@@ -6,19 +6,23 @@ const getById = require('./getById');
 
 module.exports = ({
     repository,
-    hooks = {}
+    hooks = {},
+    validations = {}
 }) => ({
     add: add({
         repository,
-        hooks: hooks.add || {}
+        hooks: hooks.add || {},
+        validate: validations.add
     }),
     update: update({
         repository,
-        hooks: hooks.update || {}
+        hooks: hooks.update || {},
+        validate: validations.update
     }),
     delete: deleteService({
         repository,
-        hooks: hooks.delete || {}
+        hooks: hooks.delete || {},
+        validate: validations.delete
     }),
     get: get({
         repository,

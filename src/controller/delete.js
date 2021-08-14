@@ -1,6 +1,7 @@
 const {
-    Response
-} = require('../common/Response');
+    Response,
+    validationFailed
+} = require('../common');
 
 module.exports = (service) => async (req, res, next) => {
     try {
@@ -10,7 +11,8 @@ module.exports = (service) => async (req, res, next) => {
         } = req;
         const serviceResponse = await service.delete({
             data: body,
-            query
+            query,
+            validationFailed: validationFailed(req, res, next)
         });
         res.json(new Response({
             status: true,

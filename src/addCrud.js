@@ -12,13 +12,15 @@ module.exports = ({
         schema
     },
     hooks,
+    validations,
     repository = defaultRepository({
         entityName,
         schema
     }),
     service = defaultServiceGenerator({
         repository,
-        hooks
+        hooks,
+        validations
     }),
 }) => {
     return getCrudControllers({

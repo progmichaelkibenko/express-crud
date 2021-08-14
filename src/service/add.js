@@ -1,13 +1,18 @@
 const {
-    isFunction
+    isFunction,
+    isEmpty
 } = require('lodash');
 
 module.exports = ({
     repository,
-    hooks
+    hooks,
+    validate,
 }) => {
     return async ({
-        data
+        data,
+        query,
+        params,
+        validationFailed
     }) => {
         const {
             pre,
@@ -20,6 +25,15 @@ module.exports = ({
             _data = await pre({
                 data: _data
             })
+        }
+
+        if (isFunction(validate)) {
+            const errors = await validate({
+                data: _data
+            });
+            if (!isEmpty(errors)) {
+                validationFailed(errors);
+            }
         }
 
         let result = await repository.add({
