@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "start": "node index.js",
-    "start:playground": "node playground.js"
+    "start:playground": "node playground.js",
+    "publish:private": "npm publish --access private",
+    "publish:public": "npm publish --access public"
   },
   "repository": {
     "type": "git",
