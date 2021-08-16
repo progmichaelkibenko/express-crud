@@ -7,6 +7,7 @@ const defaultRepository = require('./repository');
 
 module.exports = ({
     entityName,
+    apiPrefix,
     moreRoutes,
     mongo: {
         schema
@@ -25,6 +26,7 @@ module.exports = ({
 }) => {
     return getCrudControllers({
         entityName,
+        apiPrefix,
         service,
         more: moreRoutes
     })

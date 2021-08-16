@@ -9,7 +9,8 @@ module.exports = {
     getCrudControllers: ({
         entityName,
         more,
-        service
+        service,
+        apiPrefix = '',
     }) => {
         const entityRouter = express.Router();
 
@@ -17,7 +18,7 @@ module.exports = {
             service
         })
 
-        entityRouter.use(`/${entityName}`, addBasic({
+        entityRouter.use(`${apiPrefix}/${entityName}`, addBasic({
             more,
             controller
         }))

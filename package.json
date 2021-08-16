@@ -1,6 +1,6 @@
 {
   "name": "express-pro-crud",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Crud building library for express",
   "main": "index.js",
   "scripts": {
