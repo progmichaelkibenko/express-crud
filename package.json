@@ -1,5 +1,5 @@
 {
-  "name": "express-crud",
+  "name": "express-pro-crud",
   "version": "1.0.0",
   "description": "Crud building library for express",
   "main": "index.js",
