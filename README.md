@@ -33,9 +33,9 @@ app.use(bestEntityCrud)
 
 ## Contracts
 
-* add antity POST => /{entityNmae}
-* update entity PUT => /{entityName}
-* delete entity DELETE => 
+* add antity POST => /{entityName}
+* update entity PUT => /{entityName}?id=${id} or id in body
+* delete entity DELETE => /{entityName}?id=${id} or id in body
 * getAll entity instances GET => /{entityName}
 * get entity by id GET => /{entityName}/{id}
 
@@ -53,7 +53,7 @@ app.use(bestEntityCrud)
     },
     {
       "_id": "6118114d8005f92d5df8632f",
-      "name": "base entity",
+      "name": "best entity",
       "__v": 0,
       "updatedAt": "2021-08-14T18:58:48.001Z"
     }
