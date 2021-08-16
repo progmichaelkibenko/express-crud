@@ -101,6 +101,21 @@ const bestEntityCrud = crud({
 ```
 in this case the expected path will be /api/bestEntity
 
+## disable logs
+
+```
+const bestEntityCrud = crud({
+    entityName: 'bestEntity',
+    mongo: {
+        schema: bestEntitySchema
+    },
+    apiPrefix: '/api',
+    disableLogs: true
+});
+
+```
+in this case the system logs will not be fired
+
 
 
 

@@ -11,6 +11,7 @@ module.exports = {
         more,
         service,
         apiPrefix = '',
+        disableLogs,
     }) => {
         const entityRouter = express.Router();
 
@@ -18,10 +19,15 @@ module.exports = {
             service
         })
 
-        entityRouter.use(`${apiPrefix}/${entityName}`, addBasic({
+        const path = `${apiPrefix}/${entityName}`;
+        entityRouter.use(path, addBasic({
             more,
             controller
         }))
+
+        if (!disableLogs) {
+            console.log(`Crud added for ${entityName} with path ${path}`);
+        }
 
         return entityRouter;
     }

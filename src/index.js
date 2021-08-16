@@ -1,7 +1,7 @@
-const addCrud = require('./addCrud')
+const crud = require('./getCrud')
 const common = require('./common');
 
 module.exports = {
-    crud: addCrud,
+    crud,
     common
 }

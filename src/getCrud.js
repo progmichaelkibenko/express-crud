@@ -23,11 +23,13 @@ module.exports = ({
         hooks,
         validations
     }),
+    disableLogs
 }) => {
     return getCrudControllers({
         entityName,
         apiPrefix,
         service,
-        more: moreRoutes
+        more: moreRoutes,
+        disableLogs
     })
 }
